@@ -1,0 +1,17 @@
+
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Outputs the hello
+Resources:
+  HelloFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambda.LambdaHandler::handleRequest
+      Runtime: java8
+      CodeUri: ./
+      Events:
+        myHelloApi:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: GET
