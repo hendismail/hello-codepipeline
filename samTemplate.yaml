@@ -8,7 +8,7 @@ Resources:
     Properties:
       Handler: lambda.LambdaHandler::handleRequest
       Runtime: java8
-      CodeUri: ./
+      CodeUri: ./src/main/java/lambda
       Events:
         myHelloApi:
           Type: Api
