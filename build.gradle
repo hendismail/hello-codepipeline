@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "4.0.1"
+}
+
+version '1.0.0.SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation group: 'com.amazonaws', name: 'aws-lambda-java-core', version: '1.2.0'
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-core', version: '1.11.437'
+}
+
+wrapper {
+    gradleVersion = '4.10.2'
+}
