@@ -1,0 +1,13 @@
+
+version: 0.2
+phases:
+  build:
+    commands:
+      - gradlew shadowJar
+      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket hello-code-pipeline 
+                                   --output-template-file outputSamTemplate.yaml
+artifacts:
+  files:
+    - build/libs/hello-codepipeline-all.jar
+    - samTemplate.yaml
+    - outputSamTemplate.yaml
